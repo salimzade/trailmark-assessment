@@ -1,0 +1,101 @@
+.condition-panel {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.condition-panel.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-style: italic;
+  min-height: 300px;
+}
+
+.condition-panel h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.trail-details {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.trail-details p {
+  margin: 0.5rem 0;
+}
+
+.trail-details strong {
+  display: inline-block;
+  min-width: 80px;
+}
+
+.condition-section {
+  margin-top: 1.5rem;
+}
+
+.condition-section h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.loading {
+  color: #0066cc;
+  font-style: italic;
+}
+
+.error {
+  color: #d32f2f;
+  padding: 0.75rem;
+  background: #ffebee;
+  border-radius: 4px;
+}
+
+.condition-section p {
+  margin: 0.75rem 0;
+}
+
+.condition-section strong {
+  display: inline-block;
+  min-width: 100px;
+}
+
+.open {
+  color: #155724;
+  font-weight: 600;
+}
+
+.closed {
+  color: #721c24;
+  font-weight: 600;
+}
+
+.hazards {
+  margin: 1rem 0;
+}
+
+.hazards ul {
+  margin-top: 0.5rem;
+  margin-left: 1.5rem;
+  color: #d32f2f;
+}
+
+.hazards li {
+  margin: 0.25rem 0;
+}
+
+.updated {
+  margin-top: 1rem;
+  color: #999;
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+}
