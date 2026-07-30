@@ -26,7 +26,8 @@ class TrailApp {
     init() {
         this.attachEventHandlers();
         this.render();
-        this.attachListItemHandlers();
+
+        // this.attachListItemHandlers();
     }
 
     attachEventHandlers() {
@@ -39,6 +40,22 @@ class TrailApp {
         });
 
         this.elements.formModal.addEventListener('keydown', (e) => this.handleModalKeydown(e));
+
+        this.elements.trailList.addEventListener('click', (e) => {
+            const editBtn = e.target.closest('[data-role="edit"]');
+            const deleteBtn = e.target.closest('[data-role="delete"]');
+            const item = e.target.closest('.trail-item');
+
+            if (!item) return;
+
+            const id = item.dataset.trailId;
+
+            if (editBtn) {
+                this.openModal(id);
+            } else if (deleteBtn) {
+                this.deleteTrail(id);
+            }
+        });
     }
 
     handleModalKeydown(event) {
@@ -70,27 +87,28 @@ class TrailApp {
         }
     }
 
-    attachListItemHandlers() {
-        const items = this.elements.trailList.querySelectorAll('.trail-item');
-        items.forEach(item => {
-            const editBtn = item.querySelector('[data-role="edit"]');
-            const deleteBtn = item.querySelector('[data-role="delete"]');
 
-            if (editBtn) {
-                editBtn.addEventListener('click', () => {
-                    const id = item.dataset.trailId;
-                    this.openModal(id);
-                });
-            }
+    // attachListItemHandlers() {
+    //     const items = this.elements.trailList.querySelectorAll('.trail-item');
+    //     items.forEach(item => {
+    //         const editBtn = item.querySelector('[data-role="edit"]');
+    //         const deleteBtn = item.querySelector('[data-role="delete"]');
 
-            if (deleteBtn) {
-                deleteBtn.addEventListener('click', () => {
-                    const id = item.dataset.trailId;
-                    this.deleteTrail(id);
-                });
-            }
-        });
-    }
+    //         if (editBtn) {
+    //             editBtn.addEventListener('click', () => {
+    //                 const id = item.dataset.trailId;
+    //                 this.openModal(id);
+    //             });
+    //         }
+
+    //         if (deleteBtn) {
+    //             deleteBtn.addEventListener('click', () => {
+    //                 const id = item.dataset.trailId;
+    //                 this.deleteTrail(id);
+    //             });
+    //         }
+    //     });
+    // }
 
     handleSearch(event) {
         const term = event.target.value;
