@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { FilterOptions } from '../types';
-// import style from './TrailFilters.css';
+import './TrailFilters.css';
 
 interface TrailFiltersProps {
   onFilterChange: (filters: FilterOptions) => void;

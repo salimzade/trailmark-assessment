@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Trail, FilterOptions, SortField, SortOrder } from '../types';
-// import style from './TrailList.css';
+import './TrailList.css';
 
 interface TrailListProps {
   trails: Trail[];
