@@ -113,7 +113,8 @@ class TrailApp {
     handleSearch(event) {
         const term = event.target.value;
 
-        // TODO: Debounce search input
+        if (this.debounceTimer) clearTimeout(this.debounceTimer);
+
         this.debounceTimer = setTimeout(() => {
             this.performSearch(term);
         }, 300);
