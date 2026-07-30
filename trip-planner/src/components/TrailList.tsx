@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Trail, FilterOptions, SortField, SortOrder } from '../types';
-import './TrailList.css';
+// import style from './TrailList.css';
 
 interface TrailListProps {
   trails: Trail[];
@@ -14,7 +14,7 @@ export function TrailList({ trails, filters, onSelectTrail, selectedTrailId }: T
   const [sortOrder, setSortOrder] = useState<SortOrder>('asc');
 
   const filteredAndSorted = useMemo(() => {
-    let result = trails;
+    let result = [...trails];
 
     if (filters.difficulty) {
       result = result.filter(t => t.difficulty === filters.difficulty);
