@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { FilterOptions } from '../types';
-import './TrailFilters.css';
+// import style from './TrailFilters.css';
 
 interface TrailFiltersProps {
   onFilterChange: (filters: FilterOptions) => void;
@@ -22,7 +22,7 @@ export function TrailFilters({ onFilterChange, regions }: TrailFiltersProps) {
     }, 2000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [difficulty, region, maxDistance, onFilterChange]);
 
   return (
     <div className="filters">
